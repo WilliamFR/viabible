@@ -1,2 +1,0 @@
-# viabible
-via.bible
