@@ -1,0 +1,344 @@
+/* ============================================================
+   Via Bible – Lectio Continua
+   Styles frontend
+   ============================================================ */
+
+.vbl-app {
+  font-family: inherit;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+}
+
+/* ── Titres section ─────────────────────────────────────────── */
+.vbl-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.vbl-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.65;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Grille des plans ───────────────────────────────────────── */
+.vbl-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.vbl-plan-card {
+  background: var(--color-surface, #f9f8f5);
+  border: 1px solid var(--color-border, #d4d1ca);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  cursor: pointer;
+  transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+  position: relative;
+  text-align: left;
+}
+.vbl-plan-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border-color: var(--color-primary, #01696f);
+  transform: translateY(-2px);
+}
+.vbl-plan-card.vbl-active-plan {
+  border-color: var(--color-primary, #01696f);
+  background: var(--color-primary-highlight, #cedcd8);
+}
+.vbl-plan-card-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+.vbl-plan-card-desc {
+  font-size: 0.82rem;
+  opacity: 0.7;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+.vbl-plan-card-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+}
+.vbl-badge {
+  background: var(--color-surface-offset, #f3f0ec);
+  border-radius: 20px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #7a7974);
+  border: 1px solid var(--color-border, #d4d1ca);
+}
+.vbl-badge-primary {
+  background: var(--color-primary, #01696f);
+  color: #fff;
+  border-color: transparent;
+}
+.vbl-plan-progress-mini {
+  height: 3px;
+  background: var(--color-border, #d4d1ca);
+  border-radius: 3px;
+  margin-top: 0.75rem;
+  overflow: hidden;
+}
+.vbl-plan-progress-mini-fill {
+  height: 100%;
+  background: var(--color-primary, #01696f);
+  border-radius: 3px;
+  transition: width 0.5s;
+}
+
+/* ── En-tête lecteur ────────────────────────────────────────── */
+.vbl-reader-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.vbl-plan-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+}
+.vbl-streak {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary, #01696f);
+  white-space: nowrap;
+}
+
+/* ── Barre de progression ───────────────────────────────────── */
+.vbl-progress-bar-wrap {
+  position: relative;
+  height: 20px;
+  background: var(--color-surface-offset, #f3f0ec);
+  border-radius: 10px;
+  overflow: visible;
+  margin-bottom: 1.2rem;
+}
+.vbl-progress-bar {
+  height: 100%;
+  background: var(--color-primary, #01696f);
+  border-radius: 10px;
+  transition: width 0.5s cubic-bezier(.16,1,.3,1);
+  min-width: 2px;
+}
+.vbl-progress-label {
+  position: absolute;
+  right: 0;
+  top: -1.4rem;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+/* ── Navigation jours ───────────────────────────────────────── */
+.vbl-day-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  gap: 0.5rem;
+}
+.vbl-day-label {
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  flex: 1;
+}
+
+/* ── Passages du jour ───────────────────────────────────────── */
+.vbl-passages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.vbl-passage-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-surface, #f9f8f5);
+  border: 1px solid var(--color-border, #d4d1ca);
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+}
+.vbl-passage-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.vbl-passage-text {
+  font-weight: 600;
+}
+
+/* ── Articles via.bible ─────────────────────────────────────── */
+.vbl-articles {
+  margin-bottom: 1.2rem;
+}
+.vbl-articles-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+  margin-bottom: 0.6rem;
+}
+.vbl-articles-loading {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  font-style: italic;
+}
+.vbl-articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.vbl-article-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 7px;
+  background: var(--color-surface-2, #fbfbf9);
+  border: 1px solid var(--color-border, #d4d1ca);
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.88rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+.vbl-article-item:hover {
+  border-color: var(--color-primary, #01696f);
+  background: var(--color-primary-highlight, #cedcd8);
+  color: inherit;
+}
+.vbl-article-type {
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.1rem 0.45rem;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.vbl-type-comprendre {
+  background: #e8f0fe;
+  color: #1a56b0;
+}
+.vbl-type-mediter {
+  background: #fef3c7;
+  color: #92400e;
+}
+.vbl-type-other {
+  background: var(--color-surface-offset, #f3f0ec);
+  color: var(--color-text-muted, #7a7974);
+}
+.vbl-no-articles {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  font-style: italic;
+  padding: 0.3rem 0;
+}
+
+/* ── Bouton "Marquer comme lu" ──────────────────────────────── */
+.vbl-day-actions {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Outils export/import ───────────────────────────────────── */
+.vbl-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border, #d4d1ca);
+  margin-top: 0.5rem;
+}
+
+/* ── Boutons ────────────────────────────────────────────────── */
+.vbl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 7px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s;
+  text-decoration: none;
+}
+.vbl-btn-primary {
+  background: var(--color-primary, #01696f);
+  color: #fff;
+  border-color: var(--color-primary, #01696f);
+}
+.vbl-btn-primary:hover {
+  background: var(--color-primary-hover, #0c4e54);
+  border-color: var(--color-primary-hover, #0c4e54);
+}
+.vbl-btn-primary.vbl-btn-done {
+  background: var(--color-success, #437a22);
+  border-color: var(--color-success, #437a22);
+}
+.vbl-btn-ghost {
+  background: transparent;
+  color: var(--color-text, #28251d);
+  border-color: var(--color-border, #d4d1ca);
+}
+.vbl-btn-ghost:hover {
+  background: var(--color-surface-offset, #f3f0ec);
+  border-color: var(--color-primary, #01696f);
+  color: var(--color-primary, #01696f);
+}
+.vbl-btn-danger {
+  background: transparent;
+  color: #a12c7b;
+  border-color: #e0ced7;
+}
+.vbl-btn-danger:hover {
+  background: #e0ced7;
+}
+
+/* ── Toast notification ─────────────────────────────────────── */
+.vbl-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  background: var(--color-text, #28251d);
+  color: var(--color-text-inverse, #f9f8f4);
+  padding: 0.65rem 1.3rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  opacity: 1;
+  transition: opacity 0.4s, transform 0.4s;
+  pointer-events: none;
+}
+.vbl-toast.vbl-toast-hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(1rem);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .vbl-plans-grid { grid-template-columns: 1fr; }
+  .vbl-reader-header { flex-direction: column; align-items: flex-start; }
+  .vbl-plan-title { text-align: left; }
+  .vbl-tools { flex-direction: column; align-items: stretch; }
+  .vbl-tools .vbl-btn { justify-content: center; }
+}
